@@ -53,6 +53,7 @@ pub enum GrpcCompressionType {
     None,
     Deflate,
     Gzip,
+    Lz4,
 }
 
 /// OnlineConfig for the `server` module.
@@ -376,6 +377,7 @@ impl Config {
             GrpcCompressionType::None => CompressionAlgorithms::GRPC_COMPRESS_NONE,
             GrpcCompressionType::Deflate => CompressionAlgorithms::GRPC_COMPRESS_DEFLATE,
             GrpcCompressionType::Gzip => CompressionAlgorithms::GRPC_COMPRESS_GZIP,
+            GrpcCompressionType::Lz4 => CompressionAlgorithms::GRPC_COMPRESS_LZ4,
         }
     }
 }
